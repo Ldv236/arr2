@@ -17,6 +17,7 @@ public class Main {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100_000) + 100_000;
         }
+        //Arrays.fill(arr, random.nextInt(100_000) + 100_000); fill by one value
         return arr;
     }
 
@@ -45,14 +46,18 @@ public class Main {
 
         int minValue = arrInt[0];
         int maxValue = arrInt[0];
-        for (int i = 1; i < arrInt.length; i++) {
-            if (minValue > arrInt[i]) {
-                minValue = arrInt[i];
-            }
-            if (maxValue < arrInt[i]) {
-                maxValue = arrInt[i];
+
+        if (arrInt.length > 1) {
+            for (int i = 1; i < arrInt.length; i++) {
+                if (minValue > arrInt[i]) {
+                    minValue = arrInt[i];
+                }
+                if (maxValue < arrInt[i]) {
+                    maxValue = arrInt[i];
+                }
             }
         }
+
         System.out.println("Min " + minValue+ ", max " + maxValue);
     }
 
