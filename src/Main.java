@@ -105,7 +105,7 @@ public class Main {
     public static void task5 () {
         System.out.println("Миссия \"Пузырьковый беспредел\"");
 
-        int[] arrInt = generateRandomArray(10,10,10);
+        int[] arrInt = generateRandomArray(20,20,20);
 
         System.out.println(Arrays.toString(arrInt));
 
