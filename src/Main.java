@@ -9,6 +9,7 @@ public class Main {
         task2();
         task3();
         task4();
+        task5();
     }
 
     public static int[] generateRandomArray() {
@@ -16,6 +17,17 @@ public class Main {
         int[] arr = new int[30];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        //Arrays.fill(arr, random.nextInt(100_000) + 100_000); fill by one value
+        return arr;
+    }
+
+    //перегрузка мощщщщщная
+    public static int[] generateRandomArray(int start, int end, int count) {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[count];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(end) + start;
         }
         //Arrays.fill(arr, random.nextInt(100_000) + 100_000); fill by one value
         return arr;
@@ -87,5 +99,27 @@ public class Main {
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
         }
+        System.out.println("\n***");
+    }
+
+    public static void task5 () {
+        System.out.println("Миссия \"Пузырьковый беспредел\"");
+
+        int[] arrInt = generateRandomArray(10,10,10);
+
+        System.out.println(Arrays.toString(arrInt));
+
+        int temp = 0;
+        for (int i = arrInt.length - 1; i >= 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (arrInt[j] > arrInt[j + 1]) {
+                    temp = arrInt[j];
+                    arrInt[j] = arrInt[j + 1];
+                    arrInt[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(arrInt));
     }
 }
